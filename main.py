@@ -1,10 +1,20 @@
 def alternate_signs(list):
+    '''
+    Verifica daca semnele elem listei sunt alternante
+    :param list: lista de nr intregi
+    :return: True daca semnele elem sunt alternante si False, altfel
+    '''
     for el in range(1, len(list)):
         if list[el] * list[el-1] > 0:
             return False
     return True
 
 def get_longest_alternating_signs(list):
+    '''
+    Prezinta elem listei unde semnele se alterneaza
+    :param list: lista de nr intregi
+    :return: lista cu elem unde semnele se alterneaza
+    '''
     smax = []
     for i in range(len(list)):
         for j in range(i+1, len(list)):
@@ -17,6 +27,11 @@ def test_get_longest_alternating_signs():
     assert get_longest_alternating_signs([2, 3, -6]) == [3, -6]
 
 def is_prime_list(list):
+    '''
+    Verifica el prime dintr-o lista
+    :param list: lista de nr intregi
+    :return: True daca el este prim si False, altfel
+    '''
     for el in range(1, len(list)):
         if (list[el]==0 or list[el]==1):
             return False
@@ -26,6 +41,11 @@ def is_prime_list(list):
     return True
 
 def get_longest_all_primes(list):
+    '''
+    Prezinta elem listei unde elem sunt nr prime
+    :param list: lista de nr intregi
+    :return: lista cu elem care sunt nr prime
+    '''
     sprim = []
     for i in range(len(list)):
         for j in range(i+1, len(list)):
@@ -35,9 +55,13 @@ def get_longest_all_primes(list):
 
 def test_get_longest_all_primes():
     assert get_longest_all_primes([1, 3, 6]) == [1, 3]
-    assert get_longest_all_primes([11, 25, 40, 1]) == [11]
-    
+
 def is_prime(n):
+    '''
+    Verifica n nr prim
+    :param n: nr intreg
+    :return: True daca n este prim si False, altfel
+    '''
   if (n==0 or n==1):
     return False
   for d in range(2, n//2):
@@ -46,6 +70,11 @@ def is_prime(n):
     return True
 
 def cif_is_prime(list):
+    '''
+    Verifica daca elem listei sunt form din nr cu cifre prime
+    :param list: lista de nr intregi
+    :return: True daca elem sunt nr cu cifre prime si False, altfel
+    '''
     for el in list:
         while el!=0:
             cif = el % 10
@@ -55,6 +84,11 @@ def cif_is_prime(list):
     return True
 
 def get_longest_prime_digits(list):
+    '''
+    Prezinta elem listei unde elem sunt nr form din cifre prime
+    :param list: lista de nr intregi
+    :return: lista cu elem care sunt nr form din cifre prime
+    '''
     scif = []
     for i in range(len(list)):
         for j in range(i, len(list)):
